@@ -1,0 +1,7 @@
+#version : 1.0.0
+spring:
+  application:
+    name: buildpacks-demo
+
+server:
+  port: 9090
