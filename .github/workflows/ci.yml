@@ -1,0 +1,33 @@
+name: CI pipeline
+on:
+  push:
+    branches:
+      - master
+  pull_request: 
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+         # Checkout the code
+          - name: Checkout code
+            uses: actions/checkout@v3
+
+         # Set up Java Environment
+          - name: Set up JDK 21
+            uses: actions/setup-java@v3
+            with:
+                java-version: '21'
+                distribution: 'temurin'
+        
+         # Build the application
+          - name: Build with Maven
+            run: mvn clean package 
+
+        # Archive the artifact
+          - name: Upload build artifact
+            uses: actions/upload-artifact@v3
+            with:
+                name: buildpacks-demo.jar
+                path: target/buildpacks-demo.jar

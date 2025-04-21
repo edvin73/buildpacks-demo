@@ -12,5 +12,11 @@ public class AppController {
 	public String hello() {
 		return MESSAGE;
 	}
+	
+	
+	@GetMapping("/hello")
+	public String helloWorld() {
+		return "Hello World!";
+	}
 	 
 }
