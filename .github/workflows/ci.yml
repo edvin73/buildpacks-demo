@@ -27,7 +27,7 @@ jobs:
 
         # Archive the artifact
           - name: Upload build artifact
-            uses: actions/upload-artifact@v3
+            uses: actions/upload-artifact@v4
             with:
                 name: buildpacks-demo.jar
                 path: target/buildpacks-demo.jar
