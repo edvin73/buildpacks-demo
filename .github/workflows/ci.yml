@@ -21,9 +21,13 @@ jobs:
                 java-version: '21'
                 distribution: 'temurin'
         
-         # Build the application
+         # Build and Test the application
           - name: Build with Maven
             run: mvn clean package 
+
+          - name: Run Unit Tests
+            run: mvn test
+      
 
         # Archive the artifact
           - name: Upload build artifact
